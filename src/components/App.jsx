@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import './App.css'
 import TitleBar from "./TitleBar/TitleBar";
+import BookViewer from "./BookViewer/BookViewer";
+
 
 class App extends Component {
     constructor(props) {
@@ -37,4 +39,20 @@ class App extends Component {
         });
     }
 
+
+
+    render() {
+        return (
+        <div className="container-fluid">
+            <TitleBar />
+            <BookViewer book={this.books[this.state.bookNumber]} nextBook={this.goToNextBook} previousBook={this.goToPreviousBook} />
+            {/* <BookCreator createNewBook={this.createBook} /> */}
+            {/* <Footer /> */}
+        </div>
+        )
+    }
 }
+
+
+
+export default App; 
