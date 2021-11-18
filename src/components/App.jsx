@@ -15,8 +15,26 @@ class App extends Component {
         };
     }
 
-render() {
-    return(
-        
-    )
+    goToNextBook = () => {
+        let tempBookNumber = this.state.bookNumber;
+        tempBookNumber++;
+        if(tempBookNumber === this.books.length) {
+            tempBookNumber = 0;
+        }
+        this.setState({
+            bookNumber: tempBookNumber
+        });
+    }    
+
+    goToPreviousBook = () => {
+        let tempBookNumber = this.state.bookNumber;
+        tempBookNumber--;
+        if(tempBookNumber < 0){
+            tempBookNumber = this.books.length - 1;
+        }
+        this.setState({
+            bookNumber: tempBookNumber
+        });
+    }
+
 }
